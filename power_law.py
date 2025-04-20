@@ -50,13 +50,14 @@ for date in halving_dates:
 plt.yscale('log')                                                   # Set y-axis to logarithmic scale
 plt.xlim(datetime(2010, 1, 1), datetime(2023, 12, 31))              # Set x-axis limits
 year_dates = [datetime(year, 1, 1) for year in range(2010, 2024)]   # Create the desired year ticks
-plt.xticks(year_dates, color='black', rotation=45, ha='right')      # Set the x-axis ticks and labels with black color
+plt.xticks(year_dates, color='gray', rotation=45, ha='right')      # Set the x-axis ticks and labels with black color
 plt.ylim(10**-2)                                                    # Set yLimit 
 ax = plt.gca()                                                      # Get the current axes
-ax.tick_params(axis='y', colors='black')                            # Set the y-axis tick labels color to black
-ax.set_xlabel('Year')                               
-ax.set_ylabel('BTC Price ($)')
-ax.set_title('Bitcoin Power Law Chart')
+ax.tick_params(axis='y', color='gray')                            # Set the y-axis tick labels color to black
+ax.set_xlabel('Year', color='gray')                               
+ax.set_ylabel('BTC Price ($)', color='gray')
+ax.set_title('Bitcoin Power Law Chart', color='gray')
+plt.yticks(color='gray')
 plt.legend()
 plt.grid(True, which="both", linestyle='--', alpha=0.1)
 plt.tight_layout()
